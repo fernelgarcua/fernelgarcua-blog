@@ -1,0 +1,31 @@
+<div class="author">
+    <h1 class="author_heading">Hi, I am Fernel-</h1>
+    <p class="author_body">Mechanical Engineer and Systems Developer </p>
+</div>
+
+<img src="https://scontent.fbga1-4.fna.fbcdn.net/v/t39.30808-6/415414009_6531711646933288_7259938442256320996_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFZto1xbhp7v5sRxJ7uJbfaKnlEFspQh-sqeUQWylCH6-N8WALvJNMhc5ZSQoNiWmXTMGrD-PyHf1sTaDAfCI5m&_nc_ohc=f3U7i7ym16UAX8B-NeM&_nc_ht=scontent.fbga1-4.fna&oh=00_AfDV33yFYokSSSNsbWSj-_1Knmi6nQgPXCFT6gfFgdnSQg&oe=6598D989" class="hero-image" width="781" height="455">
+
+<section class="articles">
+    <h2 class="articles_heading">Latest Posts</h2>
+    <ul class="article-ul">
+
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/post/<%= post._id %>"> 
+                    <span><%= post.title %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+     
+        
+    </ul>
+
+    <% if (nextPage !== null) { 
+        %>
+            <a href="/?page<%= nextPage %>" class="pagination">&lt; View Older Post</a>   
+        <% } 
+    %>
+
+    
+</section>
